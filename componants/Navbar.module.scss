@@ -1,0 +1,19 @@
+.nav {
+  padding: 0.5rem 1rem;
+  position: absolute;
+  display: flex;
+
+  .navbarRightSection {
+    gap: 1rem;
+    .navLinksSection {
+      gap: 1rem;
+    }
+  }
+}
+@media (max-width: 640px) {
+  .navbarRightSection {
+    .navLinksSection {
+      display: none;
+    }
+  }
+}
