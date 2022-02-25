@@ -1,12 +1,57 @@
 .heroSection {
   height: 100vh;
+
   .content {
     display: flex;
     position: absolute;
     flex-direction: column;
     gap: 1em;
   }
-
+  .textHI {
+    letter-spacing: 0.25em;
+    font-size: large;
+  }
   .anime {
+    max-width: 100%;
+    font-weight: bold;
+    display: inline;
+    margin-left: 1rem;
+    align-items: center;
+    letter-spacing: 0.15em;
+    font-size: x-large;
+    background: #9c70cf;
+    background: -webkit-linear-gradient(to right, #9c70cf 20%, #c465cf 80%);
+    background: -moz-linear-gradient(to right, #9c70cf 20%, #c465cf 80%);
+    background: linear-gradient(to right, #9c70cf 20%, #c465cf 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .__vertical_email1 {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    bottom: 1rem;
+    right: 1.5rem;
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.2em;
+    letter-spacing: 0.2rem;
+    writing-mode: vertical-rl;
+  }
+
+  .__vertical_email2 {
+    position: fixed;
+    margin: 0;
+    bottom: 7rem;
+    left: 1.5rem;
+    padding: 0;
+    writing-mode: horizontal-tb;
+
+    .__vertical_email2::after {
+      content: "";
+      width: 1px;
+      height: 2rem;
+      background: palegreen;
+    }
   }
 }

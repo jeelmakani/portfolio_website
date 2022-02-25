@@ -53,7 +53,7 @@ function Navbar() {
           {routes.map(({ name, to }) => (
             <NextuiLink color="text" key={name}>
               <Link href={to} passHref>
-                <article className="Nav_items">{name}</article>
+                <article className={`${style.Nav_items}`}>{name}</article>
               </Link>
             </NextuiLink>
           ))}

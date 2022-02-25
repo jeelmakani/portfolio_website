@@ -4,9 +4,13 @@
   display: flex;
 
   .navbarRightSection {
-    gap: 1rem;
+    gap: 2rem;
     .navLinksSection {
-      gap: 1rem;
+      gap: 2rem;
+      .Nav_items {
+        font-weight: 500;
+        letter-spacing: 0.15rem;
+      }
     }
   }
 }

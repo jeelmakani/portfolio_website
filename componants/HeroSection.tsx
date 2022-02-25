@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./HeroSection.module.scss";
-import { Col, Row, Text } from "@nextui-org/react";
+import { Row, Text, Link } from "@nextui-org/react";
 import profilePic from "../assets/profilePic2.png";
 import Image from "next/image";
 import HandGIF from "../assets/Hand.gif";
-import Typed from "react-typed";
+import Typed from "typed.js";
+import facebookIcon from "../assets/icons8-facebook.gif";
+import linkedinIcon from "../assets/icons8-linkedin-2.gif";
+import twitterIcon from "../assets/icons8-twitter.gif";
 
 function HeroSection() {
+  const element = useRef<null | Element>(null);
+  const mailto = () => {
+    window.open("mailto:makanijeel@gmail.com");
+  };
+
+  useEffect(() => {
+    const typed = new Typed(element.current, {
+      strings: ["Front-end Dev", "Data Scientist", "ML engineer"],
+      startDelay: 1,
+      typeSpeed: 50,
+      backSpeed: 50,
+      backDelay: 50,
+      loop: true,
+      showCursor: false,
+    });
+    return () => {
+      typed.destroy();
+    };
+  }, []);
   return (
     <section
       className={`flex justify-center align-center ${styles.heroSection}`}
@@ -14,13 +36,13 @@ function HeroSection() {
     >
       <div className={`${styles.content}`}>
         <Row align="center">
-          <Text>
+          <Text className={`${styles.textHI}`}>
             Hi,
             <span className="wave">
-              <Image src={HandGIF} alt="HandGIF" width={20} height={20} />
+              <Image src={HandGIF} alt="HandGIF" width={25} height={25} />
             </span>
-            &nbsp; I'm{" "}
-            <span className="header">
+            &nbsp; I&apos;m{" "}
+            <span>
               <strong>Jeel Makani</strong>
             </span>
           </Text>
@@ -30,19 +52,20 @@ function HeroSection() {
           alt="Picture of the author"
           layout="responsive"
         />
-        <Typed
-          style={{
-            maxWidth: "100%",
-            fontWeight: "bold",
-            textAlign: "center",
-          }}
-          strings={["Front-end Dev,", "ML Engineer,", "Data Scientist."]}
-          typeSpeed={40}
-          backSpeed={50}
-          loop
-        />
-
-        {/* <Text> Machine Learning Engineer </Text> */}
+        <article>
+          <span className={`${styles.anime}`} ref={element}></span>
+        </article>
+      </div>
+      <Link onClick={mailto} className={`${styles.__vertical_email1}`}>
+        makanijeel@gmail.com
+        &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+      </Link>
+      <div className={`${styles.__vertical_email2}`}>
+        {/* <Image src={facebookIcon} alt="fb" width={30} height={30} />
+        <br />
+        <Image src={linkedinIcon} alt="ln" width={30} height={30} />
+        <br />
+        <Image src={twitterIcon} alt="tw" width={30} height={30} /> */}
       </div>
     </section>
   );

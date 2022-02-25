@@ -1,0 +1,66 @@
+.blockquotewrapper {
+  display: flex;
+  height: 50vh;
+  padding: 0;
+  .blockquote {
+    position: relative;
+    padding: 0;
+    padding-left: 2.5%;
+    width: 100%;
+    max-width: 700px;
+    z-index: 1;
+    margin: 60px auto;
+    align-self: center;
+    border-top: solid 1px #730b77;
+    border-bottom: solid 1px #651f94;
+
+    .author {
+      position: relative;
+      font-size: 1.4rem;
+      font-weight: normal;
+      line-height: 1;
+      margin: 0;
+      padding-top: 20px;
+      z-index: 1;
+    }
+  }
+}
+.blockquote:after {
+  position: absolute;
+  content: "”";
+  color: rgba(255, 255, 255, 1);
+  font-size: 10rem;
+  line-height: 0;
+  bottom: -43px;
+  right: 30px;
+}
+
+.formsection {
+  flex-direction: row;
+  display: flex;
+  margin-left: 20%;
+  margin-right: 30%;
+  margin-bottom: 15%;
+  margin-top: 2%;
+}
+@media all and (min-width: 600px) {
+  .blockquotewrapper {
+    display: flex;
+    height: 60vh;
+    padding: 0 10px;
+    .blockquote {
+      font-size: 60px;
+    }
+  }
+}
+
+/* Blockquote subheader */
+.blockquote h4 {
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+  padding-top: 20px;
+  z-index: 1;
+}
