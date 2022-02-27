@@ -15,7 +15,7 @@ function Navbar() {
   const routes = [
     {
       name: "Home",
-      to: "/",
+      to: "/  ",
     },
     {
       name: "Projects",

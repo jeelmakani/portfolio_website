@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspree/react": "^2.2.4",
     "@nextui-org/react": "^1.0.2-beta.4",
+    "axios": "^0.26.0",
+    "linkifyjs": "^3.0.5",
     "next": "12.1.0",
     "next-themes": "^0.1.1",
     "react": "17.0.2",

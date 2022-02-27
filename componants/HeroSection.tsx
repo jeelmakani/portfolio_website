@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import styles from "./HeroSection.module.scss";
 import { Row, Text, Link } from "@nextui-org/react";
 import profilePic from "../assets/profilePic2.png";
@@ -10,25 +10,41 @@ import linkedinIcon from "../assets/icons8-linkedin-2.gif";
 import twitterIcon from "../assets/icons8-twitter.gif";
 
 function HeroSection() {
-  const element = useRef<null | Element>(null);
+  const element = useRef<HTMLSpanElement>(null);
+
   const mailto = () => {
     window.open("mailto:makanijeel@gmail.com");
   };
 
-  useEffect(() => {
-    const typed = new Typed(element.current, {
-      strings: ["Front-end Dev", "Data Scientist", "ML engineer"],
-      startDelay: 1,
-      typeSpeed: 50,
-      backSpeed: 50,
-      backDelay: 50,
-      loop: true,
-      showCursor: false,
-    });
-    return () => {
-      typed.destroy();
-    };
+  const [typed, setTyped] = useState<Typed | undefined>(undefined);
+
+  const initTyped = useCallback(() => {
+    // setTimeout(() => {
+    //   if (typed) return;
+    //   initTyped();
+    // }, 200);
+
+    if (!element.current) return;
+
+    setTyped(
+      new Typed(element.current, {
+        strings: ["Front-end Dev", "Data Scientist", "ML engineer"],
+        startDelay: 1,
+        typeSpeed: 50,
+        backSpeed: 50,
+        backDelay: 50,
+        loop: true,
+        showCursor: false,
+      })
+    );
   }, []);
+
+  useEffect(() => {
+    setTimeout(initTyped, 200);
+
+    return () => typed?.destroy();
+  }, []);
+
   return (
     <section
       className={`flex justify-center align-center ${styles.heroSection}`}

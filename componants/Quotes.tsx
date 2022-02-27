@@ -42,7 +42,7 @@ const Quotes = () => {
     let count: number = Phase.QuoteVisible;
 
     setInterval(() => {
-      let phase = (count % 10) + 1;
+      let phase = (count % 5) + 1;
 
       if (phase === Phase.GetQuote) {
         getQuote((quote) => setQuote(quote));
@@ -59,10 +59,10 @@ const Quotes = () => {
     <div className={`${quoteVisible ? style.quote : style.hidden}`}>
       <div className={`${quoteVisible ? style.fadeintext : style.hidden}`}>
         <Text
-          h3
-          size={40}
+          className={`${style.blockquoteFont}`}
           css={{
             textGradient: "45deg, $purple500 -20%, $pink500 100%",
+            letterSpacing: "$wide",
           }}
           weight="bold"
         >
