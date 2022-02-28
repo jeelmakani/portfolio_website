@@ -1,34 +1,58 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
-import styles from "./HeroSection.module.scss";
-import { Row, Text, Link } from "@nextui-org/react";
-import profilePic from "../assets/profilePic2.png";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+  useMemo,
+} from "react";
 import Image from "next/image";
-import HandGIF from "../assets/Hand.gif";
+import { useRouter } from "next/router";
+import { Row, Text, Link, Button, Container } from "@nextui-org/react";
 import Typed from "typed.js";
-import facebookIcon from "../assets/icons8-facebook.gif";
-import linkedinIcon from "../assets/icons8-linkedin-2.gif";
-import twitterIcon from "../assets/icons8-twitter.gif";
+
+import styles from "./HeroSection.module.scss";
+
+import en from "../locals/en";
+import de from "../locals/de";
+
+import {
+  Hand as HandGIF,
+  Twitter,
+  ProfilePic2 as profilePic,
+  Instagram,
+  Github,
+  Linkedin,
+} from "../assets";
 
 function HeroSection() {
   const element = useRef<HTMLSpanElement>(null);
 
-  const mailto = () => {
-    window.open("mailto:makanijeel@gmail.com");
+  const router = useRouter();
+
+  const { locale } = router;
+
+  const t = useMemo(() => (locale === "en" ? en : de), [locale]);
+
+  const chagetoEnglish = () => {
+    const locale = "en";
+    router.push(router.pathname, router.asPath, { locale });
   };
+
+  const changetoGerman = () => {
+    const locale = "de";
+    router.push(router.pathname, router.asPath, { locale });
+  };
+
+  const mailto = () => window.open("mailto:makanijeel@gmail.com");
 
   const [typed, setTyped] = useState<Typed | undefined>(undefined);
 
   const initTyped = useCallback(() => {
-    // setTimeout(() => {
-    //   if (typed) return;
-    //   initTyped();
-    // }, 200);
-
     if (!element.current) return;
 
     setTyped(
       new Typed(element.current, {
-        strings: ["Front-end Dev", "Data Scientist", "ML engineer"],
+        strings: ["Front-end Dev", "Data Scientist", "ML Enthusiast"],
         startDelay: 1,
         typeSpeed: 50,
         backSpeed: 50,
@@ -57,7 +81,7 @@ function HeroSection() {
             <span className="wave">
               <Image src={HandGIF} alt="HandGIF" width={25} height={25} />
             </span>
-            &nbsp; I&apos;m{" "}
+            &nbsp; {t.iam}
             <span>
               <strong>Jeel Makani</strong>
             </span>
@@ -67,21 +91,72 @@ function HeroSection() {
           src={profilePic}
           alt="Picture of the author"
           layout="responsive"
+          width={500}
+          height={500}
         />
         <article>
           <span className={`${styles.anime}`} ref={element}></span>
         </article>
       </div>
-      <Link onClick={mailto} className={`${styles.__vertical_email1}`}>
+
+      <Container className={`${styles.languageSection} flex`}>
+        <span>
+          <Button
+            bordered={locale === "de"}
+            disabled={locale === "de"}
+            color="gradient"
+            onClick={changetoGerman}
+          >
+            Deutsch
+          </Button>
+        </span>
+
+        <span>
+          <Button
+            bordered={locale === "en"}
+            disabled={locale === "en"}
+            color="gradient"
+            onClick={chagetoEnglish}
+          >
+            English
+          </Button>
+        </span>
+      </Container>
+
+      <Link
+        color="text"
+        onClick={mailto}
+        className={`${styles.__vertical_email1}`}
+      >
         makanijeel@gmail.com
-        &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
       </Link>
-      <div className={`${styles.__vertical_email2}`}>
-        {/* <Image src={facebookIcon} alt="fb" width={30} height={30} />
-        <br />
-        <Image src={linkedinIcon} alt="ln" width={30} height={30} />
-        <br />
-        <Image src={twitterIcon} alt="tw" width={30} height={30} /> */}
+      <div
+        className={`rounded-social-buttons flex flex-col ${styles.__vertical_email2}`}
+      >
+        <Link
+          className={`twitter social-button`}
+          href="https://twitter.com/jeelmakani"
+        >
+          <Twitter />
+        </Link>
+        <Link
+          href="https://www.instagram.com/jeel_makani/"
+          className="social-button instagram"
+        >
+          <Instagram />
+        </Link>
+        <Link
+          href="https://github.com/jeelmakani"
+          className="social-button github"
+        >
+          <Github />
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/jeel-makani-b8110816a/"
+          className="social-button linkedin"
+        >
+          <Linkedin />
+        </Link>
       </div>
     </section>
   );

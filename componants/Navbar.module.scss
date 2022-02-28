@@ -1,12 +1,18 @@
 .nav {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   position: absolute;
   display: flex;
+  z-index: 10;
 
   .navbarRightSection {
-    gap: 2rem;
+    gap: 1rem;
+    .languageselectionarea {
+      display: flex;
+      align-items: center;
+    }
     .navLinksSection {
       gap: 2rem;
+
       .Nav_items {
         font-weight: 500;
         letter-spacing: 0.15rem;
@@ -14,7 +20,7 @@
     }
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .navbarRightSection {
     .navLinksSection {
       display: none;

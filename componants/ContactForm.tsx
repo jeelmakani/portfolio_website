@@ -34,7 +34,6 @@ function ContactForm() {
   }
   return (
     <form className={`flex flex-col ${style.form}`} onSubmit={handleSubmit}>
-      {/* <label htmlFor="email">Email Address</label> */}
       <Input
         size="lg"
         clearable

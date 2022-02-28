@@ -1,5 +1,6 @@
 .heroSection {
   height: 100vh;
+  position: relative;
 
   .content {
     display: flex;
@@ -26,11 +27,19 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  .languageSection {
+    position: absolute;
+    bottom: 10em;
+    gap: 2em;
+    justify-content: center;
+  }
+
   .__vertical_email1 {
     position: fixed;
     margin: 0;
     padding: 0;
-    bottom: 1rem;
+    bottom: 8rem;
     right: 1.5rem;
     text-align: left;
     font-weight: 500;
@@ -56,7 +65,13 @@
   }
 }
 @media (max-width: 640px) {
-  .__vertical_email1 {
+  .__vertical_email1,
+  .__vertical_email2 {
     display: none;
+  }
+}
+@media (max-height: 768px) {
+  .languageSection {
+    bottom: 4em !important;
   }
 }
