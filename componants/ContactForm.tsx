@@ -3,13 +3,15 @@ import { useForm, ValidationError } from "@formspree/react";
 import { Input, useInput, Textarea, Button } from "@nextui-org/react";
 import style from "./ContactForm.module.scss";
 import { test } from "linkifyjs";
+import Image from "next/image";
+import formPic from "../assets/formPic.svg";
 
 interface Helper {
   text: any;
   color: any;
 }
 
-function ContactForm() {
+const ContactFormText = () => {
   const validateEmail = useMemo(() => test, []);
 
   const [state, handleSubmit] = useForm("meqnkjya");
@@ -76,6 +78,17 @@ function ContactForm() {
         Submit
       </Button>
     </form>
+  );
+};
+
+function ContactForm() {
+  return (
+    <section className={`${style.formsection}`}>
+      <Image src={formPic} alt="Form Img" width={500} height={500} />
+      <div className={`${style.questionform}`}>
+        <ContactFormText />
+      </div>
+    </section>
   );
 }
 export default ContactForm;

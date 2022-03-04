@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../componants/Navbar";
 
-function Education() {
+function Experience() {
   return (
     <div>
       <Navbar />
@@ -9,4 +9,4 @@ function Education() {
   );
 }
 
-export default Education;
+export default Experience;

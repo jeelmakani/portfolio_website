@@ -37,8 +37,8 @@
 
   .__vertical_email1 {
     position: fixed;
-    margin: 0;
-    padding: 0;
+    margin: 0px auto;
+    padding: 0px;
     bottom: 8rem;
     right: 1.5rem;
     text-align: left;
@@ -46,6 +46,14 @@
     font-size: 1.2em;
     letter-spacing: 0.2rem;
     writing-mode: vertical-rl;
+    // &:after {
+    //   content: "";
+    //   display: block;
+    //   width: 1px;
+    //   margin: 0px auto;
+    //   height: 90px;
+    //   background-color: var(--nextui-colors-text);
+    // }
   }
 
   .__vertical_email2 {

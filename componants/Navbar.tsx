@@ -1,13 +1,15 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   Avatar,
+  Container,
   Link as NextuiLink,
   Switch,
   Text,
   useTheme,
 } from "@nextui-org/react";
 import { useTheme as useNextTheme } from "next-themes";
-import { RiMoonFill, RiSunFill } from "react-icons/ri";
+import { RiMoonFill, RiSunFill, RiArrowDownSLine } from "react-icons/ri";
+import useScrollListener from "./hooks/useScrollListener";
 
 import style from "./Navbar.module.scss";
 import Link from "next/link";
@@ -19,6 +21,7 @@ import LanguageDropdown from "./UI/LanguageDropdown";
 
 function Navbar() {
   const router = useRouter();
+
   const { locale } = router;
 
   const t = useMemo(() => (locale === "en" ? en : de), [locale]);
@@ -47,48 +50,64 @@ function Navbar() {
 
   const { isDark, type } = useTheme();
 
+  const [isVisible, setIsVisible] = useState(true);
+
+  const scroll = useScrollListener();
+
+  // update classList of nav on scroll
+  useEffect(() => {
+    // if (scroll.y > 150 && scroll.y - scroll.lastY > 0) setIsVisible(false);
+    if (scroll.y > 100 && scroll.y - scroll.lastY > 0) setIsVisible(false);
+    else setIsVisible(true);
+  }, [scroll.y, scroll.lastY]);
+
   return (
-    <nav className={`flex justify-between w-full ${style.nav}`}>
-      <section aria-label="left_section">
-        <Avatar src="https://nextui.org/avatars/avatar-3.png" />
-      </section>
-
-      <section
-        className={`flex align-center ${style.navbarRightSection}`}
-        aria-label="middle_section"
+    <nav className={`flex justify-center`}>
+      <Container
+        lg
+        className={`flex ${style.nav} ${isVisible ? "" : style.navHidden}`}
       >
-        <section
-          className={`flex align-center ${style.navLinksSection}`}
-          aria-label="Nav Links"
-        >
-          {routes.map(({ nameKey, to }) => (
-            <NextuiLink color="text" key={nameKey}>
-              <Link href={to} passHref>
-                <article className={`${style.Nav_items}`}>
-                  {t[nameKey] || nameKey}
-                </article>
-              </Link>
-            </NextuiLink>
-          ))}
+        <section aria-label="left_section">
+          <Avatar src="https://nextui.org/avatars/avatar-3.png" />
         </section>
-      </section>
 
-      <section
-        className={`flex align-center ${style.navbarRightSection}`}
-        aria-label="right_section"
-      >
-        <div className={`${style.languageselectionarea}`}>
-          <LanguageDropdown />
-        </div>
+        <section
+          className={`flex align-center ${style.navbarRightSection}`}
+          aria-label="middle_section"
+        >
+          <section
+            className={`flex align-center ${style.navLinksSection}`}
+            aria-label="Nav Links"
+          >
+            {routes.map(({ nameKey, to }) => (
+              <NextuiLink color="text" key={nameKey}>
+                <Link href={to} passHref>
+                  <article className={`${style.Nav_items}`}>
+                    {t[nameKey] || nameKey}
+                  </article>
+                </Link>
+              </NextuiLink>
+            ))}
+          </section>
+        </section>
 
-        <Switch
-          checked={isDark}
-          onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
-          iconOff={<RiSunFill />}
-          iconOn={<RiMoonFill />}
-          css={{ padding: "$0" }}
-        />
-      </section>
+        <section
+          className={`flex align-center ${style.navbarRightSection}`}
+          aria-label="right_section"
+        >
+          <div className={`${style.languageselectionarea}`}>
+            <LanguageDropdown />
+          </div>
+
+          <Switch
+            checked={isDark}
+            onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
+            iconOff={<RiSunFill />}
+            iconOn={<RiMoonFill />}
+            css={{ padding: "$0" }}
+          />
+        </section>
+      </Container>
     </nav>
   );
 }

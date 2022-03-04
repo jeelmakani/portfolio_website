@@ -7,7 +7,7 @@ import formPic from "../assets/formPic.svg";
 import Quotes from "./Quotes";
 import ContactForm from "./ContactForm";
 
-function FormSection() {
+const FormSection = () => {
   return (
     <Container justify="center" className={`${style.formSectionMainContainer}`}>
       <Container sm>
@@ -17,15 +17,16 @@ function FormSection() {
           </div>
         </div>
       </Container>
-
+      <ContactForm />
+      {/* 
       <section className={`${style.formsection}`}>
         <Image src={formPic} alt="Form Img" width={500} height={500} />
         <div className={`${style.questionform}`}>
           <ContactForm />
         </div>
-      </section>
+      </section> */}
     </Container>
   );
-}
+};
 
 export default FormSection;

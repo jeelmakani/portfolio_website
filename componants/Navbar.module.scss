@@ -1,29 +1,54 @@
 .nav {
   padding: 0.5rem 2rem;
-  position: absolute;
-  display: flex;
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   z-index: 10;
+  transition: all 0.35s ease-in-out;
+  top: 0;
+  background: var(--nextui-colors-background);
+  border-radius: var(--nextui-radii-sm);
+  box-shadow: var(--nextui-shadows-sm);
+  margin: 1em 0 0 0;
+
+  @media screen and (max-width: 768px) {
+    margin: 0;
+  }
 
   .navbarRightSection {
     gap: 1rem;
+    right: 0;
+    justify-content: flex-end;
+
     .languageselectionarea {
-      display: flex;
       align-items: center;
     }
+
     .navLinksSection {
       gap: 2rem;
 
       .Nav_items {
-        font-weight: 500;
+        font-weight: 800;
         letter-spacing: 0.15rem;
       }
     }
   }
+
+  &.navHidden {
+    transform: translateY(-150%);
+
+    @media screen and (max-width: 768px) {
+      transform: translateY(-100%);
+    }
+  }
 }
+
 @media (max-width: 768px) {
-  .navbarRightSection {
-    .navLinksSection {
-      display: none;
+  .nav {
+    .navbarRightSection {
+      .navLinksSection {
+        display: none;
+      }
     }
   }
 }

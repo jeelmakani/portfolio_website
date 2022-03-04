@@ -1,4 +1,40 @@
-.projecthero {
-  display: flex;
-  padding: 5em;
+.pagebody {
+  .context {
+    display: grid;
+    padding: 4em 0;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 5em;
+    }
+
+    .myproject {
+      flex-direction: column;
+      justify-content: center;
+
+      text-align: center;
+      padding: 0 0 2em 0;
+      gap: 0em;
+      .projecttext {
+        letter-spacing: 0.25rem;
+        .projecttext1 {
+          letter-spacing: 0.25rem;
+        }
+      }
+
+      .Text {
+        letter-spacing: 0.15rem;
+        font-weight: 450;
+        text-align: justify;
+      }
+    }
+    // }
+  }
+}
+@media (max-width: 768px) {
+  .context {
+    gap: 0;
+    grid-auto-flow: row;
+    padding: 0 1em !important;
+  }
 }
