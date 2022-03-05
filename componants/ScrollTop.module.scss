@@ -1,0 +1,17 @@
+.button {
+  position: fixed;
+  bottom: 5em;
+  right: 5em;
+  transform: translateY(calc(6em + 100%));
+  transition: transform 0.3s ease-in-out;
+
+  .buttonstyle {
+    height: 2.5em;
+    width: 2.5em;
+    padding: 0.15em;
+  }
+
+  &.show {
+    transform: translateY(0);
+  }
+}

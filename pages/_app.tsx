@@ -2,6 +2,7 @@ import { createTheme, NextUIProvider } from "@nextui-org/react";
 import type { AppProps as NextAppProps } from "next/app";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { SSRProvider } from "@react-aria/ssr";
+import Layout from "../componants/Layout";
 
 import "../styles/global.scss";
 
@@ -31,7 +32,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
       >
         <NextUIProvider>
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </NextUIProvider>
       </NextThemesProvider>
     </SSRProvider>

@@ -326,6 +326,10 @@ Rotate Transition in foote Soical Icon
   justify-content: space-between;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
 .align-center {
   align-items: center;
 }
@@ -333,6 +337,11 @@ Rotate Transition in foote Soical Icon
 .w-full {
   width: 100%;
 }
+
+.h-100vh {
+  height: 100vh;
+}
+
 .twitter-icon {
   padding: 4px;
 }

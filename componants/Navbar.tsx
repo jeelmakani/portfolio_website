@@ -54,9 +54,7 @@ function Navbar() {
 
   const scroll = useScrollListener();
 
-  // update classList of nav on scroll
   useEffect(() => {
-    // if (scroll.y > 150 && scroll.y - scroll.lastY > 0) setIsVisible(false);
     if (scroll.y > 100 && scroll.y - scroll.lastY > 0) setIsVisible(false);
     else setIsVisible(true);
   }, [scroll.y, scroll.lastY]);
@@ -65,7 +63,7 @@ function Navbar() {
     <nav className={`flex justify-center`}>
       <Container
         lg
-        className={`flex ${style.nav} ${isVisible ? "" : style.navHidden}`}
+        className={`${style.nav} ${isVisible ? "" : style.navHidden}`}
       >
         <section aria-label="left_section">
           <Avatar src="https://nextui.org/avatars/avatar-3.png" />

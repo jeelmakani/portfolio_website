@@ -8,7 +8,6 @@ import FormSection from "../componants/FormSection";
 const Home: NextPage = () => {
   return (
     <>
-      <Navbar />
       <Container justify="center">
         <HeroSection />
         <FormSection />
