@@ -6,8 +6,7 @@ function Footer() {
   return (
     <footer className={`flex justify-center`}>
       <Container md className={`${style.footercontainer}`}>
-        {/* <footer className={` ${style.footer}`}> */}
-        <Text>
+        <Text b>
           🎨 and <code> {"</>"} </code> with ❤️ by Jeel Makani
         </Text>
       </Container>

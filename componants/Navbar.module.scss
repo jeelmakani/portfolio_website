@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   z-index: 10;
-  transition: all 0.35s ease-in-out;
+  transition: transform 0.35s ease-in-out;
   top: 0;
   background: var(--nextui-colors-background);
   border-radius: var(--nextui-radii-sm);

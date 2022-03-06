@@ -36,11 +36,11 @@ function Navbar() {
       to: "/projects",
     },
     {
-      nameKey: "experience",
+      nameKey: "Skills",
       to: "/experience",
     },
     {
-      nameKey: "education",
+      nameKey: "Qualification",
       to: "/education",
     },
     { nameKey: "Blogs", to: "/blogs" },
