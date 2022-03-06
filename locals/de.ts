@@ -3,6 +3,6 @@ export default {
   iam: "Ich ",
   submit: "Submit",
   projects: "Projekte",
-  experience: "Fähigkeiten",
-  education: "Qualifikationen",
+  Skills: "Fähigkeiten",
+  Qualifications: "Qualifikationen",
 } as Record<string, string>;
