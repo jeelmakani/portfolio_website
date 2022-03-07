@@ -29,10 +29,9 @@ function Cards() {
           descriptionHtml,
         }) => (
           <Card
-            hoverable
-            animated="true"
+            animated
             shadow={false}
-            css={{ background: "$background" }}
+            className={`${style.cardmain}`}
             key={key}
           >
             <div className={`${style.projectstyle}`}>
@@ -92,12 +91,15 @@ function Cards() {
           </Card>
         )
       )}
-      <Pagination
-        initialPage={1}
-        total={Math.ceil(API.length / pagePostsLimit)}
-        page={currentPage}
-        onChange={(page: number) => setCurrentPage(page)}
-      />
+      <div className={`flex justify-center`}>
+        <Pagination
+          size="xl"
+          initialPage={1}
+          total={Math.ceil(API.length / pagePostsLimit)}
+          page={currentPage}
+          onChange={(page: number) => setCurrentPage(page)}
+        />
+      </div>
     </Container>
   );
 }

@@ -19,7 +19,7 @@ function SkillsCard() {
       </Text>
       <Container className={`${style.skillcontainer}`}>
         {skillsAPI.map(({ key, techs, levels }) => (
-          <Card bordered shadow hoverable key={key}>
+          <Card bordered shadow key={key} className={`${style.boxShadow}`}>
             <div className={`flex flex-col justify-center ${style.context}`}>
               <Text
                 css={{

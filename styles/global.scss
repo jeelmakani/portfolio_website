@@ -350,10 +350,40 @@ Rotate Transition in foote Soical Icon
   gap: 1rem;
 }
 
+.light-theme {
+  .the-real-nav {
+    background: rgba(white, 0.5);
+  }
+}
+
+@keyframes bounceGradients {
+  75% {
+    transform: translate(2%, 7.5%);
+  }
+  50% {
+    transform: translate(1%, 5%);
+  }
+  25% {
+    transform: translate(2%, 2.5%);
+  }
+  0% {
+    transform: translate(0, 0%);
+  }
+}
+
+.background2,
+.background3 {
+  animation: bounceGradients 8s cubic-bezier(0.215, 0.61, 0.755, 1) infinite;
+}
+
 .dark-theme {
   .github {
     svg {
       fill: var(--nextui-colors-text);
     }
+  }
+  .background2,
+  .background3 {
+    opacity: 0.18;
   }
 }

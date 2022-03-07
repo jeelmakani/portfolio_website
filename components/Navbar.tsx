@@ -18,6 +18,7 @@ import { useRouter } from "next/router";
 import en from "../locals/en";
 import de from "../locals/de";
 import LanguageDropdown from "./UI/LanguageDropdown";
+import Image from "next/image";
 
 function Navbar() {
   const router = useRouter();
@@ -63,7 +64,8 @@ function Navbar() {
     <nav className={`flex justify-center`}>
       <Container
         lg
-        className={`${style.nav} ${isVisible ? "" : style.navHidden}`}
+        // className={`${style.nav} ${isVisible ? "" : style.navHidden}`}
+        className={`the-real-nav ${style.nav}`}
       >
         <section aria-label="left_section">
           <Avatar src="https://nextui.org/avatars/avatar-3.png" />

@@ -1,0 +1,42 @@
+// .background1 {
+//   position: fixed;
+//   bottom: -50%;
+//   left: -10%;
+//   right: -50%;
+
+//   animation: 200ms ease 100ms 1 normal forwards running;
+// }
+.background2,
+.background3 {
+  height: 100vw;
+  width: 60vw;
+  background: var(--nextui-colors-gradient);
+  opacity: 0.12;
+  position: fixed;
+  border-radius: 50%;
+  backdrop-filter: blur(500px);
+}
+
+.background2 {
+  right: -20vw;
+  top: 5vw;
+  background: linear-gradient(
+    15deg,
+    var(--nextui-colors-blue500) 0.1%,
+    var(--nextui-colors-purple500) 20%,
+    var(--nextui-colors-background)
+  );
+}
+
+.background3 {
+  height: 70vw;
+  width: 50vw;
+  left: -25vh;
+  top: -60vh;
+  background: linear-gradient(
+    180deg,
+    var(--nextui-colors-blue500) 30%,
+    var(--nextui-colors-purple500) 20%,
+    var(--nextui-colors-background)
+  );
+}

@@ -10,7 +10,10 @@ import { useRouter } from "next/router";
 import { Row, Text, Link, Button, Container } from "@nextui-org/react";
 import Typed from "typed.js";
 
-import styles from "./HeroSection.module.scss";
+import backgroundImg1 from "../assets/gradient-left-dark.svg";
+import backgroundImg2 from "../assets/gradient-right-dark.svg";
+
+import style from "./HeroSection.module.scss";
 
 import en from "../locals/en";
 import de from "../locals/de";
@@ -71,12 +74,12 @@ function HeroSection() {
 
   return (
     <section
-      className={`flex justify-center align-center ${styles.heroSection}`}
+      className={`flex justify-center align-center ${style.heroSection}`}
       aria-label="Hero Section"
     >
-      <div className={`${styles.content}`}>
+      <div className={`${style.content}`}>
         <Row align="center">
-          <Text className={`${styles.textHI}`}>
+          <Text className={`${style.textHI}`}>
             Hi,
             <span className="wave">
               <Image src={HandGIF} alt="HandGIF" width={25} height={25} />
@@ -95,11 +98,11 @@ function HeroSection() {
           height={500}
         />
         <article>
-          <span className={`${styles.anime}`} ref={element}></span>
+          <span className={`${style.anime}`} ref={element}></span>
         </article>
       </div>
 
-      <Container className={`${styles.languageSection} flex`}>
+      <Container className={`${style.languageSection} flex`}>
         <span>
           <Button
             bordered={locale === "de"}
@@ -126,12 +129,12 @@ function HeroSection() {
       <Link
         color="text"
         onClick={mailto}
-        className={`${styles.__vertical_email1}`}
+        className={`${style.__vertical_email1}`}
       >
         makanijeel@gmail.com
       </Link>
       <div
-        className={`rounded-social-buttons flex flex-col ${styles.__vertical_email2}`}
+        className={`rounded-social-buttons flex flex-col ${style.__vertical_email2}`}
       >
         <Link
           className={`twitter social-button`}
