@@ -1,17 +1,15 @@
 import React from "react";
 import { Container, Text } from "@nextui-org/react";
-import ContactForm from "../componants/ContactForm";
+import ContactForm from "../components/ContactForm";
 
-import Cards from "../componants/UI/Cards";
-import Navbar from "../componants/Navbar";
+import Cards from "../components/UI/Cards";
 import workImg from "../assets/workimg.svg";
 import Image from "next/image";
-import style from "./Projects.module.scss";
+import style from "./projects.module.scss";
 
 function Projects() {
   return (
     <div className={`flex flex-col ${style.pagebody}`}>
-      <Navbar />
       <Container md className={`flex ${style.context}`}>
         <Image src={workImg} alt="workImg" width={500} height={500} />
         <div className={`flex ${style.myproject}`}>

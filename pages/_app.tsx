@@ -2,10 +2,9 @@ import { createTheme, NextUIProvider } from "@nextui-org/react";
 import type { AppProps as NextAppProps } from "next/app";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { SSRProvider } from "@react-aria/ssr";
-import Layout from "../componants/Layout";
+import Layout from "../components/Layout";
 
 import "../styles/global.scss";
-
 type AppProps<P = any> = {
   pageProps: P;
 } & Omit<NextAppProps<P>, "pageProps">;

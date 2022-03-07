@@ -1,12 +1,6 @@
 import { Button, Tooltip } from "@nextui-org/react";
 import { useRouter } from "next/router";
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useCallback,
-  useMemo,
-} from "react";
+import React, { useState, useMemo } from "react";
 import style from "./languageDropdown.module.scss";
 
 function LanguageDropdown() {
@@ -34,48 +28,8 @@ function LanguageDropdown() {
     router.push(router.pathname, router.asPath, { locale });
   };
 
-  // useEffect(() => {
-  //   locale && setLang(locale);
-  // }, [locale]);
-
-  // const [isDropdownActive, setIsDropdownActive] = useState(false);
-
-  // const changeLanguageHandler = () => {
-  //   const locale = code;
-  //   router.push(router.pathname, router.asPath, { locale });
-  //   setLang(locale);
-  // };
-
   return (
-    <div
-    // className={`flex flex-col ${style.lang} ${
-    //   isDropdownActive && style.active
-    // }`}
-    // onMouseEnter={() => setIsDropdownActive(true)}
-    // onMouseLeave={() => setIsDropdownActive(false)}
-    >
-      {/* <Tooltip content={lang === "en" ? "English" : "Deutsch"} placement="left">
-        <div className={`${style[lang]}`}></div>
-      </Tooltip> */}
-      {/* <div className={style.dropdown}> */}
-      {/* {languages
-          .filter(({ code }) => code !== lang)
-          .map(({ code }) => {
-            return (
-              <Tooltip
-                key={code + "language-selection-dropdown"}
-                content={code === "en" ? "English" : "Deutsch"}
-                placement="left"
-              >
-                <div
-                  onClick={() => changeLanguageHandler(code)}
-                  className={`${style[code]}`}
-                >
-                  {code.toUpperCase()}
-                </div>
-              </Tooltip>
-            );
-          })} */}
+    <div>
       <Button.Group size="sm" color="gradient">
         <Button
           ghost={locale === "en"}
@@ -106,7 +60,6 @@ function LanguageDropdown() {
         </Button>
       </Button.Group>
     </div>
-    // </div>
   );
 }
 

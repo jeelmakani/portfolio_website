@@ -8,7 +8,7 @@ import {
   useTheme,
 } from "@nextui-org/react";
 import { useTheme as useNextTheme } from "next-themes";
-import { RiMoonFill, RiSunFill, RiArrowDownSLine } from "react-icons/ri";
+import { RiMoonFill, RiSunFill } from "react-icons/ri";
 import useScrollListener from "./hooks/useScrollListener";
 
 import style from "./Navbar.module.scss";
@@ -37,11 +37,11 @@ function Navbar() {
     },
     {
       nameKey: "Skills",
-      to: "/experience",
+      to: "/skills",
     },
     {
-      nameKey: "Qualification",
-      to: "/education",
+      nameKey: "Qualifications",
+      to: "/qualifications",
     },
     { nameKey: "Blogs", to: "/blogs" },
   ];

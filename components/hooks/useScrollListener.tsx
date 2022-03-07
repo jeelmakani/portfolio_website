@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { createContext } from "vm";
 
 export default function useScrollListener() {
   const [data, setData] = useState({
@@ -32,4 +31,3 @@ export default function useScrollListener() {
 
   return data;
 }
-// export const ScrollContext = createContext(null);

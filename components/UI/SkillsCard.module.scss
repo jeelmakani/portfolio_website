@@ -1,0 +1,33 @@
+.body {
+  gap: 2.5em;
+  .skillcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    align-items: stretch;
+    margin-bottom: 3em;
+    @media (max-width: 768px) {
+      display: flex;
+      gap: 1em;
+    }
+    .context {
+      gap: 0.5em;
+
+      .techtext {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75em;
+        padding: 1em 0;
+        .starlevel {
+          margin-left: 4em;
+          @media (max-width: 768px) {
+            margin-left: 0.1em;
+          }
+          .star {
+            padding-top: 0.5em;
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,6 +9,7 @@
     grid-gap: 10px;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
+    margin: 2em;
 
     &:not(:last-of-type) {
       margin-bottom: 100px;

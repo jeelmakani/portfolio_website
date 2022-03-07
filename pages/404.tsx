@@ -2,8 +2,6 @@ import React, { useCallback } from "react";
 import { Text, Link } from "@nextui-org/react";
 import { useRouter } from "next/router";
 
-import { RiArrowLeftLine } from "react-icons/ri";
-
 const Custom404: React.FC = () => {
   const router = useRouter();
 

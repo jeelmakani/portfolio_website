@@ -1,5 +1,5 @@
 import React from "react";
-export interface Item {
+interface Item {
   key: string | number;
   TechStack: string;
   GithubLink: string;
@@ -7,7 +7,7 @@ export interface Item {
   DemoLink: string;
   ImageLink: string;
   descriptionHtml: string;
-  techs: Array<string>;
+  techs: string[];
 }
 export const API: Item[] = [
   {

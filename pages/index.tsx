@@ -1,9 +1,8 @@
 import type { NextPage } from "next";
 import { Container } from "@nextui-org/react";
 
-import Navbar from "../componants/Navbar";
-import HeroSection from "../componants/HeroSection";
-import FormSection from "../componants/FormSection";
+import HeroSection from "../components/HeroSection";
+import FormSection from "../components/FormSection";
 
 const Home: NextPage = () => {
   return (
