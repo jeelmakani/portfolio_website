@@ -96,20 +96,21 @@
   }
 }
 
-.background1 {
-  position: absolute;
-  z-index: var(--nextui-zIndices-1);
-  bottom: -50%;
-  left: -10%;
-  right: -50%;
-  animation: 200ms ease 100ms 1 normal forwards running;
-}
-.background2 {
-  top: 0px;
-  z-index: var(--nextui-zIndices-1);
-  position: absolute;
-  animation: 200ms ease 100ms 1 normal forwards running;
-}
+// .background1 {
+//   position: absolute;
+//   z-index: var(--nextui-zIndices-1);
+//   bottom: -50%;
+//   left: -10%;
+//   right: -50%;
+//   animation: 200ms ease 100ms 1 normal forwards running;
+// }
+// .background2 {
+//   display: none;
+//   top: 0px;
+//   z-index: var(--nextui-zIndices-1);
+//   position: absolute;
+//   animation: 200ms ease 100ms 1 normal forwards running;
+// }
 
 @media (max-width: 768px) {
   .nav {

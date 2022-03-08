@@ -80,8 +80,8 @@ function Navbar() {
     <nav className={`flex justify-center`}>
       <Container
         lg
-        // className={`${style.nav} ${isVisible ? "" : style.navHidden}`}
-        className={`the-real-nav ${style.nav}`}
+        className={`${style.nav} ${isVisible ? "" : style.navHidden}`}
+        // className={`the-real-nav ${style.nav}`}
       >
         <section className={style.left_section} aria-label="left_section">
           <article
@@ -120,18 +120,13 @@ function Navbar() {
             aria-label="Nav Links"
           >
             {routes.map(({ nameKey, to }) => (
-              <Text
-                h4
-                key={nameKey}
-                css={{ cursor: "pointer" }}
-                onClick={() => {
-                  router.push(to);
-                }}
-              >
-                <article className={`${style.Nav_items}`}>
-                  {t[nameKey] || nameKey}
-                </article>
-              </Text>
+              <NextuiLink color="text" key={nameKey}>
+                <Link href={to} passHref>
+                  <article className={`${style.Nav_items}`}>
+                    {t[nameKey] || nameKey}
+                  </article>
+                </Link>
+              </NextuiLink>
             ))}
           </section>
         </section>
@@ -176,7 +171,6 @@ function Navbar() {
               </article>
             </Text>
           ))}
-          <LanguageDropdown />
         </div>
       </section>
     </nav>

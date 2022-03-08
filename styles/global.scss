@@ -358,6 +358,12 @@ Rotate Transition in foote Soical Icon
   gap: 1rem;
 }
 
+.gap-05em {
+  gap: 0.5rem;
+}
+.gap-3em {
+  gap: 3rem;
+}
 .light-theme {
   .the-real-nav {
     background: rgba(white, 0.5);
@@ -395,4 +401,26 @@ Rotate Transition in foote Soical Icon
   .background3 {
     opacity: 0.18;
   }
+}
+
+// Timeline CSS Animation with react transition group
+.timelineFade-enter.timeline {
+  opacity: 0;
+  transform: translateX(-50%);
+}
+.timelineFade-enter-active.timeline {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.timelineFade-exit.timeline {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.timelineFade-exit-active.timeline {
+  opacity: 0;
+  transform: translateX(50%);
+}
+.timelineFade-enter-active.timeline,
+.timelineFade-exit-active.timeline {
+  transition: opacity 300ms, transform 300ms;
 }

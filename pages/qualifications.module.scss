@@ -1,5 +1,48 @@
-.qualifications {
-  min-height: 100vh;
-  z-index: var(--nextui-zindices-1);
-  padding: 5rem 0 0 0;
+.pagebody {
+  .context {
+    display: grid;
+    padding: 8em 0;
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 5em;
+    }
+    @media (max-width: 768px) {
+      gap: 0;
+      grid-auto-flow: row;
+      padding: 5em 1em !important;
+    }
+  }
+  .myproject {
+    flex-direction: column;
+    justify-content: center;
+    // text-align: center;
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+    .projecttext {
+      letter-spacing: 0.25rem;
+      .projecttext1 {
+        letter-spacing: 0.25rem;
+      }
+    }
+
+    .Text {
+      justify-content: center;
+      align-items: center;
+      letter-spacing: 0.15rem;
+      font-weight: 500;
+      text-align: justify;
+    }
+  }
+  .qualifications {
+    min-height: 100vh;
+    z-index: var(--nextui-zIndices-1);
+    padding: 5rem 0;
+    .link1,
+    .link2 {
+      &.selected {
+        color: rgb(255, 30, 255);
+      }
+    }
+  }
 }
