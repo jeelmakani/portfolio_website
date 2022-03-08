@@ -2,10 +2,9 @@
 import { Card, Container, Pagination, Text } from "@nextui-org/react";
 import React, { useState } from "react";
 import style from "./cards.module.scss";
-import { API } from "./ApiProjects";
+import { API } from "../Api/ApiProjects";
 
 import { RiGithubFill, RiShareBoxLine } from "react-icons/ri";
-import { debug } from "console";
 
 function Cards() {
   const [currentPage, setCurrentPage] = useState(1);

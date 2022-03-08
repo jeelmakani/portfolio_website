@@ -1,6 +1,6 @@
 import { Container, Text, Card, Divider } from "@nextui-org/react";
 import React from "react";
-import { skillsAPI } from "./SkillsAPI";
+import { skillsAPI } from "../Api/SkillsAPI";
 import style from "./SkillsCard.module.scss";
 import { BsFillPatchCheckFill } from "react-icons/bs";
 
@@ -10,9 +10,7 @@ function SkillsCard() {
       <Text
         h1
         css={{
-          fontWeight: "400",
-          letterSpacing: "$wider",
-          "@lg": { fontWeight: "$bold" },
+          "@lg": { fontWeight: "500", letterSpacing: "$wider" },
         }}
       >
         Technical Skills

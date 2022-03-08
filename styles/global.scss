@@ -330,8 +330,16 @@ Rotate Transition in foote Soical Icon
   justify-content: flex-start;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .align-center {
   align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
 }
 
 .w-full {
@@ -374,6 +382,7 @@ Rotate Transition in foote Soical Icon
 .background2,
 .background3 {
   animation: bounceGradients 8s cubic-bezier(0.215, 0.61, 0.755, 1) infinite;
+  z-index: 0;
 }
 
 .dark-theme {

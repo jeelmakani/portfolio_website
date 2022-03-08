@@ -1,11 +1,3 @@
-// .background1 {
-//   position: fixed;
-//   bottom: -50%;
-//   left: -10%;
-//   right: -50%;
-
-//   animation: 200ms ease 100ms 1 normal forwards running;
-// }
 .background2,
 .background3 {
   height: 100vw;
@@ -15,6 +7,7 @@
   position: fixed;
   border-radius: 50%;
   backdrop-filter: blur(500px);
+  z-index: 0;
 }
 
 .background2 {

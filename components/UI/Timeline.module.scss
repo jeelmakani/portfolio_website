@@ -1,0 +1,56 @@
+// Find out which gap for the grid works best for the dot
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  .timelineItem {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    gap: 2em;
+    width: 100%;
+
+    .dotContainer {
+      height: calc(100% + 4rem);
+      width: 2px;
+      background-color: purple;
+
+      .dot {
+        // margin-top: 1rem;
+        position: absolute;
+        transform: translate(calc(-50% + 1px), 20px);
+        background-color: purple;
+        border-radius: var(--nextui-radii-rounded);
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    .arrowRight,
+    .arrowLeft {
+      overflow: visible;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 20px;
+        height: 20px;
+        width: 20px;
+        transform: translatex(100%);
+        border: 10px solid transparent;
+        border-left-color: red;
+        border-right: 0;
+      }
+    }
+
+    .arrowLeft::after {
+      left: 0;
+      top: 20px;
+      transform: translatex(-100%);
+      border: 10px solid transparent;
+      border-right-color: red;
+      border-left: 0;
+    }
+  }
+}
