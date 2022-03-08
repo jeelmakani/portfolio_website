@@ -15,6 +15,33 @@
     margin: 0;
   }
 
+  .left_section {
+    display: flex;
+    align-items: center;
+
+    .hamburgerMenu {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+
+      .આડોલીટો {
+        height: 4px;
+        width: 30px;
+        background-color: var(--nextui-colors-primary);
+      }
+    }
+    .avatar {
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
   .navbarRightSection {
     gap: 1rem;
     right: 0;
@@ -43,6 +70,32 @@
   }
 }
 
+.sideNav {
+  flex-direction: column;
+  position: fixed;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-in-out;
+  width: 75vw;
+  z-index: var(--nextui-zIndices-max);
+  left: 0;
+  height: 100vh;
+  backdrop-filter: saturate(180%) blur(50px);
+  border-top-right-radius: var(--nextui-radii-lg);
+  border-bottom-right-radius: var(--nextui-radii-lg);
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+
+  &.sideNavOpen {
+    transform: translateX(0);
+  }
+  .sidenavitems {
+    font-weight: 500;
+    letter-spacing: 0.15rem;
+    font-size: 30px;
+  }
+}
+
 .background1 {
   position: absolute;
   z-index: var(--nextui-zIndices-1);
@@ -52,7 +105,6 @@
   animation: 200ms ease 100ms 1 normal forwards running;
 }
 .background2 {
-  // display: none;
   top: 0px;
   z-index: var(--nextui-zIndices-1);
   position: absolute;

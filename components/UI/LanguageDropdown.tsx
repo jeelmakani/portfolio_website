@@ -30,7 +30,7 @@ function LanguageDropdown() {
 
   return (
     <div>
-      <Button.Group size="sm" color="gradient">
+      <Button.Group size="sm" color="gradient" css={{ marginLeft: 0 }}>
         <Button
           ghost={locale === "en"}
           disabled={locale === "en"}

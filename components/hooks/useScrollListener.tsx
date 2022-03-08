@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useScrollListener() {
+export function useScrollListener() {
   const [data, setData] = useState({
     x: 0,
     y: 0,

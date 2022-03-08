@@ -9,10 +9,10 @@ import { RiGithubFill, RiShareBoxLine } from "react-icons/ri";
 function Cards() {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const pagePostsLimit: number = 2;
+  const pagePostsLimit: number = 3;
 
   return (
-    <Container md id="projects" className={`${style.herocards}`}>
+    <Container sm id="projects" className={`${style.herocards}`}>
       <Text h1>Recent Projects</Text>
       {API.slice(
         (currentPage - 1) * pagePostsLimit,

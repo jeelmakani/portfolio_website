@@ -7,18 +7,19 @@ import {
   Text,
   useTheme,
 } from "@nextui-org/react";
-import { useTheme as useNextTheme } from "next-themes";
-import { RiMoonFill, RiSunFill } from "react-icons/ri";
-import useScrollListener from "./hooks/useScrollListener";
-
-import style from "./Navbar.module.scss";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { RiMoonFill, RiSunFill } from "react-icons/ri";
+import { useTheme as useNextTheme } from "next-themes";
 
-import en from "../locals/en";
-import de from "../locals/de";
+import { en, de } from "../locals";
+import { ProfilePic1, ProfilePic3 } from "../assets";
+
+import { useScrollListener, useOnClickOutside } from "./hooks";
 import LanguageDropdown from "./UI/LanguageDropdown";
-import Image from "next/image";
+
+import style from "./Navbar.module.scss";
 
 function Navbar() {
   const router = useRouter();
@@ -53,6 +54,21 @@ function Navbar() {
 
   const [isVisible, setIsVisible] = useState(true);
 
+  const [isSideNavOpen, setIsSidebarOpen] = useState(false);
+
+  const navRef = useRef(null);
+
+  useOnClickOutside(navRef, () => setIsSidebarOpen(false));
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+
+    if (body) {
+      if (isSideNavOpen) body.style.overflow = "hidden";
+      else body.style.overflow = "visible";
+    }
+  }, [isSideNavOpen]);
+
   const scroll = useScrollListener();
 
   useEffect(() => {
@@ -67,8 +83,32 @@ function Navbar() {
         // className={`${style.nav} ${isVisible ? "" : style.navHidden}`}
         className={`the-real-nav ${style.nav}`}
       >
-        <section aria-label="left_section">
-          <Avatar src="https://nextui.org/avatars/avatar-3.png" />
+        <section className={style.left_section} aria-label="left_section">
+          <article
+            className={style.hamburgerMenu}
+            onClick={(e) => setIsSidebarOpen(!isSideNavOpen)}
+          >
+            <span className={style.આડોલીટો}></span>
+            <span className={style.આડોલીટો}></span>
+            <span className={style.આડોલીટો}></span>
+          </article>
+          <article className={`${style.avatar}`}>
+            {isDark ? (
+              <Image
+                src={ProfilePic3}
+                alt="Avatar dark"
+                height={38}
+                width={38}
+              />
+            ) : (
+              <Image
+                src={ProfilePic1}
+                alt="Avatar light"
+                height={38}
+                width={38}
+              />
+            )}
+          </article>
         </section>
 
         <section
@@ -80,13 +120,18 @@ function Navbar() {
             aria-label="Nav Links"
           >
             {routes.map(({ nameKey, to }) => (
-              <NextuiLink color="text" key={nameKey}>
-                <Link href={to} passHref>
-                  <article className={`${style.Nav_items}`}>
-                    {t[nameKey] || nameKey}
-                  </article>
-                </Link>
-              </NextuiLink>
+              <Text
+                h4
+                key={nameKey}
+                css={{ cursor: "pointer" }}
+                onClick={() => {
+                  router.push(to);
+                }}
+              >
+                <article className={`${style.Nav_items}`}>
+                  {t[nameKey] || nameKey}
+                </article>
+              </Text>
             ))}
           </section>
         </section>
@@ -108,6 +153,32 @@ function Navbar() {
           />
         </section>
       </Container>
+
+      <section
+        className={`flex ${style.sideNav} ${
+          isSideNavOpen ? style.sideNavOpen : ""
+        }`}
+        ref={navRef}
+      >
+        <div className="flex flex-col gap-1em">
+          {routes.map(({ nameKey, to }) => (
+            <Text
+              h3
+              key={nameKey}
+              css={{ cursor: "pointer" }}
+              onClick={() => {
+                setIsSidebarOpen(false);
+                router.push(to);
+              }}
+            >
+              <article className={`${style.sidenavitems}`}>
+                {t[nameKey] || nameKey}
+              </article>
+            </Text>
+          ))}
+          <LanguageDropdown />
+        </div>
+      </section>
     </nav>
   );
 }

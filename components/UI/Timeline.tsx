@@ -48,8 +48,7 @@ export const Timeline = ({ name, data }: TimelineProps) => {
                   </Text>
 
                   <Text css={{ textAlign: "right", marginBottom: "6px" }}>
-                    {" "}
-                    {desc}{" "}
+                    {desc}
                   </Text>
 
                   <Text css={{ textAlign: "right" }} size={"14px"}>
