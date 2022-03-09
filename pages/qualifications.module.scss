@@ -1,7 +1,7 @@
 .pagebody {
   .context {
     display: grid;
-    // padding: 8em 0;
+    padding: 8em 0;
     @media screen and (min-width: 768px) {
       grid-template-columns: 1fr 1fr;
       gap: 5em;
