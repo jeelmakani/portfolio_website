@@ -74,7 +74,7 @@ function HeroSection() {
 
   return (
     <section
-      className={`flex justify-center align-center ${style.heroSection}`}
+      className={`flex justify-center ${style.heroSection}`}
       aria-label="Hero Section"
     >
       <div className={`${style.content}`}>
@@ -102,29 +102,25 @@ function HeroSection() {
         </article>
       </div>
 
-      <Container className={`${style.languageSection} flex`}>
-        <span>
-          <Button
-            bordered={locale === "de"}
-            disabled={locale === "de"}
-            color="gradient"
-            onClick={changetoGerman}
-          >
-            Deutsch
-          </Button>
-        </span>
+      <section className={`${style.languageSection}`}>
+        <Button
+          bordered={locale === "de"}
+          disabled={locale === "de"}
+          color="gradient"
+          onClick={changetoGerman}
+        >
+          Deutsch
+        </Button>
 
-        <span>
-          <Button
-            bordered={locale === "en"}
-            disabled={locale === "en"}
-            color="gradient"
-            onClick={chagetoEnglish}
-          >
-            English
-          </Button>
-        </span>
-      </Container>
+        <Button
+          bordered={locale === "en"}
+          disabled={locale === "en"}
+          color="gradient"
+          onClick={chagetoEnglish}
+        >
+          English
+        </Button>
+      </section>
 
       <Link
         color="text"

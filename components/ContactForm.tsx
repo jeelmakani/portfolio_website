@@ -42,7 +42,7 @@ const ContactFormText = () => {
         shadow={false}
         helperText="Please enter your name"
         width="20em"
-        type="email"
+        type="text"
         label="First and Last name"
         placeholder="Enter your first and last name here"
       />

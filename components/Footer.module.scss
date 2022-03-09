@@ -1,8 +1,15 @@
-.footercontainer {
-  height: 60px;
-  background: var(--nextui-colors-background);
-  border-radius: var(--nextui-radii-sm);
-  box-shadow: var(--nextui-shadows-xl);
-  display: flex;
-  align-items: center;
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  z-index: var(--nextui-zIndices-max);
+
+  .footerContainer {
+    height: 3em;
+    background: var(--nextui-colors-background);
+    border-radius: var(--nextui-radii-sm);
+    box-shadow: var(--nextui-shadows-xl);
+    display: flex;
+    align-items: center;
+  }
 }

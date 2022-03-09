@@ -1,13 +1,16 @@
 .heroSection {
   height: 100vh;
-  position: relative;
+  display: grid;
+  grid-template-rows: auto;
+  // position: relative;
 
   .content {
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    gap: 1em;
+    display: grid;
+    grid-template-rows: 1fr min-content 1fr;
+    justify-content: center;
+    align-items: center;
   }
+
   .textHI {
     letter-spacing: 0.25em;
     font-size: large;
@@ -29,10 +32,11 @@
   }
 
   .languageSection {
-    position: absolute;
-    bottom: 10em;
-    gap: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
     justify-content: center;
+    line-height: 1em;
   }
 
   .__vertical_email1 {

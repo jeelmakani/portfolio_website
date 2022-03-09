@@ -16,7 +16,7 @@ export default function Layout({ children }: MyComponentProps) {
 
       <Navbar />
       <ScrollTop />
-      <main>{children}</main>
+      <main className={`${style.mainContent}`}>{children}</main>
       <Footer />
     </>
   );
