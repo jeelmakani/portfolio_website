@@ -67,7 +67,7 @@ function HeroSection() {
     setTimeout(initTyped, 200);
 
     return () => typed?.destroy();
-  }, [initTyped, typed]);
+  }, []);
 
   return (
     <section
