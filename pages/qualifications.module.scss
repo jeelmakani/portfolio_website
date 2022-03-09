@@ -16,7 +16,7 @@
   .myproject {
     flex-direction: column;
     justify-content: center;
-    // text-align: center;
+
     @media (max-width: 768px) {
       align-items: center;
     }
