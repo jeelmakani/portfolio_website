@@ -10,9 +10,6 @@ import { useRouter } from "next/router";
 import { Row, Text, Link, Button, Container } from "@nextui-org/react";
 import Typed from "typed.js";
 
-import backgroundImg1 from "../assets/gradient-left-dark.svg";
-import backgroundImg2 from "../assets/gradient-right-dark.svg";
-
 import style from "./HeroSection.module.scss";
 
 import en from "../locals/en";
