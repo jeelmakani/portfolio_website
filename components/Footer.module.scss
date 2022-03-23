@@ -3,13 +3,19 @@
   bottom: 0;
   width: 100vw;
   z-index: var(--nextui-zIndices-max);
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(calc(6em + 100%));
 
   .footerContainer {
     height: 3em;
-    background: var(--nextui-colors-background);
+    // background: var(--nextui-colors-background);
     border-radius: var(--nextui-radii-sm);
     box-shadow: var(--nextui-shadows-xl);
     display: flex;
     align-items: center;
+    backdrop-filter: saturate(180%) blur(5px);
+  }
+  &.show {
+    transform: translateY(0);
   }
 }

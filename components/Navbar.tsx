@@ -10,7 +10,6 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { RiMoonFill, RiSunFill } from "react-icons/ri";
 import { useTheme as useNextTheme } from "next-themes";
 
 import { en, de } from "../locals";
@@ -20,15 +19,23 @@ import { useScrollListener, useOnClickOutside } from "./hooks";
 import LanguageDropdown from "./UI/LanguageDropdown";
 
 import style from "./Navbar.module.scss";
+import ThemeSwitch from "./ThemeSwitch";
 
 function Navbar() {
+  interface route {
+    nameKey: string;
+    to: string;
+  }
   const router = useRouter();
 
   const { locale } = router;
 
-  const t = useMemo(() => (locale === "en" ? en : de), [locale]);
+  const t = useMemo<Record<string, string>>(
+    () => (locale === "en" ? en : de),
+    [locale]
+  );
 
-  const routes = [
+  const routes: route[] = [
     {
       nameKey: "Home",
       to: "/  ",
@@ -48,15 +55,13 @@ function Navbar() {
     { nameKey: "Blogs", to: "/blogs" },
   ];
 
-  const { setTheme } = useNextTheme();
-
   const { isDark, type } = useTheme();
 
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
 
-  const [isSideNavOpen, setIsSidebarOpen] = useState(false);
+  const [isSideNavOpen, setIsSidebarOpen] = useState<boolean>(false);
 
-  const navRef = useRef(null);
+  const navRef: React.MutableRefObject<null> = useRef<null>(null);
 
   useOnClickOutside(navRef, () => setIsSidebarOpen(false));
 
@@ -72,7 +77,7 @@ function Navbar() {
   const scroll = useScrollListener();
 
   useEffect(() => {
-    if (scroll.y > 100 && scroll.y - scroll.lastY > 0) setIsVisible(false);
+    if (scroll.y > 60 && scroll.y - scroll.lastY > 0) setIsVisible(false);
     else setIsVisible(true);
   }, [scroll.y, scroll.lastY]);
 
@@ -81,7 +86,6 @@ function Navbar() {
       <Container
         lg
         className={`${style.nav} ${isVisible ? "" : style.navHidden}`}
-        // className={`the-real-nav ${style.nav}`}
       >
         <section className={style.left_section} aria-label="left_section">
           <article
@@ -138,14 +142,7 @@ function Navbar() {
           <div className={`${style.languageselectionarea}`}>
             <LanguageDropdown />
           </div>
-
-          <Switch
-            checked={isDark}
-            onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
-            iconOff={<RiSunFill />}
-            iconOn={<RiMoonFill />}
-            css={{ padding: "$0" }}
-          />
+          <ThemeSwitch />
         </section>
       </Container>
 
