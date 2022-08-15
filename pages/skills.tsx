@@ -7,7 +7,7 @@ import SkillCards from "../components/UI/SkillsCard";
 
 function skills() {
   return (
-    <div className={`flex flex-col ${style.pagebody}`}>
+    <div className={`flex flex-col gap-3em ${style.pagebody}`}>
       <Container md className={`flex ${style.context}`}>
         <Image src={skillImg} alt="skillimg" width={300} height={300} />
         <div className={`flex ${style.myproject}`}>

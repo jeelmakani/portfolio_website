@@ -10,7 +10,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useTheme as useNextTheme } from "next-themes";
+
 
 import { en, de } from "../locals";
 import { ProfilePic1, ProfilePic3 } from "../assets";
@@ -147,9 +147,8 @@ function Navbar() {
       </Container>
 
       <section
-        className={`flex ${style.sideNav} ${
-          isSideNavOpen ? style.sideNavOpen : ""
-        }`}
+        className={`flex ${style.sideNav} ${isSideNavOpen ? style.sideNavOpen : ""
+          }`}
         ref={navRef}
       >
         <div className="flex flex-col gap-1em">

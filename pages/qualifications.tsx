@@ -12,54 +12,48 @@ import { FaGraduationCap, FaSuitcase } from "react-icons/fa";
 
 const ExperienceData: DataItem[] = [
   {
-    key: "web-dev-begin1",
-    title: "Diving into Web-Dev",
-    desc: "Got introduced to the world of Front-End Web-Dev with HTML & CSS.",
-    duration: "2012",
+    key: "Volunteer",
+    title: "Volunteer at WeAredevelopers",
+    desc: "Active Volunteer at WeAredevelopers",
+    duration: "2019-present",
   },
   {
-    key: "web-dev-begin2",
-    title: "Diving into Web-Dev",
-    desc: "Got introduced to the world of Front-End Web-Dev with HTML & CSS.",
-    duration: "2012",
-  },
-  {
-    key: "web-dev-begin3",
-    title: "Diving into Web-Dev",
-    desc: "Got introduced to the world of Front-End Web-Dev with HTML & CSS.",
-    duration: "2012",
-  },
-  {
-    key: "web-dev-begin4",
-    title: "Diving into Web-Dev",
-    desc: "Got introduced to the world of Front-End Web-Dev with HTML & CSS.",
-    duration: "2012",
+    key: "Lime-bike",
+    title: "Lime E-bike",
+    desc: "Team Lead at Lime E-bike.Youngest team lead at the age of 19. ",
+    duration: "2020-2021",
   },
 ];
 const EducationsData: DataItem[] = [
   {
-    key: "web-dev-begin1",
-    title: "Diving into Web- dvsad aDev",
-    desc: "Got introduced to the world of Front-End Web-Dev with HTML & CSS.",
-    duration: "2012",
+    key: "10th",
+    title: "10th Grade",
+    desc: "GPA: 1.0",
+    duration: "2016",
   },
   {
-    key: "web-dev-begin2",
-    title: "Diving invadsa a to Web-Dev",
-    desc: "Got introduced to the world of Front-End Web-Dev with HTML & CSS.",
-    duration: "2012",
+    key: "12th",
+    title: "12th Grade",
+    desc: "GPA: 1.7",
+    duration: "2016-2018",
   },
   {
-    key: "web-dev-begin3",
-    title: "Diving into Weaaab-Dev",
-    desc: "Got introduced to the world of Front-End Web-Dev with HTML & CSS.",
-    duration: "2012",
+    key: "jee",
+    title: "Joint Entrance Examination(JEE)",
+    desc: "One of the toughest exams in the world. Successfully qualified in JEE. Required high problem solving skills.",
+    duration: "2018",
   },
   {
-    key: "web-dev-begin4",
-    title: "Diving into  advsa vWeb-Dev",
-    desc: "Got introduced to the world of Front-End Web-Dev with HTML & CSS.",
-    duration: "2012",
+    key: "German language",
+    title: "German Language",
+    desc: "Lerned German till C1 level.",
+    duration: "2019-2020",
+  },
+  {
+    key: "Bachelor",
+    title: "Bachelor in Robotics and Artificial Intelligence",
+    desc: "at Fachhochschule wurzburg und Schweinfurt. ",
+    duration: "2021-Present",
   },
 ];
 
@@ -78,7 +72,7 @@ function qualifications() {
             css={{ textGradient: "45deg, $purple500 -20%, $pink500 100%" }}
             className={`flex flex-row gap-1em ${style.projecttext}`}
           >
-            Experiace and Education
+            Experience and Education
           </Text>
         </div>
       </Container>
@@ -94,9 +88,8 @@ function qualifications() {
           <Link
             color="text"
             css={{ fontSize: "$md" }}
-            className={`flex flex-row gap-05em align-center ${style.link1} ${
-              activeTimelineName === "experience" ? style.selected : ""
-            }`}
+            className={`flex flex-row gap-05em align-center ${style.link1} ${activeTimelineName === "experience" ? style.selected : ""
+              }`}
             onClick={() => setActiveTimelineName("experience")}
           >
             <FaSuitcase size={28} />
@@ -105,9 +98,8 @@ function qualifications() {
           <Link
             color="text"
             css={{ fontSize: "$md" }}
-            className={`flex flex-row gap-05em align-center ${style.link2} ${
-              activeTimelineName === "education" ? style.selected : ""
-            }`}
+            className={`flex flex-row gap-05em align-center ${style.link2} ${activeTimelineName === "education" ? style.selected : ""
+              }`}
             onClick={() => setActiveTimelineName("education")}
           >
             <FaGraduationCap size={28} />

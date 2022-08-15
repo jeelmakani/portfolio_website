@@ -15,7 +15,6 @@ export const skillsAPI: Item[] = [
       "Javascript",
       "Next.js",
       "tailwind",
-      "bootstrap",
       "typescript",
     ],
     levels: [
@@ -26,13 +25,12 @@ export const skillsAPI: Item[] = [
       "Intermediate",
       "Basic",
       "Intermediate",
-      "Intermediate",
     ],
   },
   {
     key: "Backend",
-    techs: ["Node.js", "django", "FastAPi", "SQL", "PostgreSQL"],
-    levels: ["Basic", "basic", "basic", "Intermediate", "Basic"],
+    techs: ["Node.js", "Flask", "django", "FastAPi", "SQL", "PostgreSQL"],
+    levels: ["Basic", "Basic", "Learning", "Learning", "Intermediate", "Basic"],
   },
   {
     key: "Machine Learning",

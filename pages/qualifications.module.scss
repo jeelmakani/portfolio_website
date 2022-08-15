@@ -1,11 +1,13 @@
 .pagebody {
   .context {
     display: grid;
-    padding: 8em 0;
+    padding: 2em 0;
+
     @media screen and (min-width: 768px) {
       grid-template-columns: 1fr 1fr;
       gap: 5em;
     }
+
     @media (max-width: 768px) {
       gap: 0;
       grid-auto-flow: row;
@@ -20,8 +22,10 @@
     @media (max-width: 768px) {
       align-items: center;
     }
+
     .projecttext {
       letter-spacing: 0.25rem;
+
       .projecttext1 {
         letter-spacing: 0.25rem;
       }
@@ -39,7 +43,8 @@
   .qualifications {
     min-height: 100vh;
     z-index: var(--nextui-zIndices-1);
-    padding: 5rem 0;
+    padding: 2rem 0;
+
     .link1,
     .link2 {
       &.selected {

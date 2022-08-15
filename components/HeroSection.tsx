@@ -52,7 +52,7 @@ function HeroSection() {
 
     setTyped(
       new Typed(element.current, {
-        strings: ["Front-end Dev", "Data Scientist", "ML Enthusiast"],
+        strings: ["Front-end Dev", "Data Science", "ML Enthusiast"],
         startDelay: 1,
         typeSpeed: 50,
         backSpeed: 50,

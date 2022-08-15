@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import style from "./Quotes.module.scss";
 import config from "./config";
-import choiceQuotes from "./QuotelinesAPI";
+import choiceQuotes from "./Api/QuotelinesAPI";
 import { Text } from "@nextui-org/react";
 
 enum Phase {
